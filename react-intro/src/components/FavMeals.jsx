@@ -1,5 +1,6 @@
 import FavMeal from "./FavMeal";
-import "../style/FavMeal.css"
+import "../style/FavMeal.css";
+import { useState } from "react";
 
 function FavMeals() {
   const favMeals = [
@@ -11,15 +12,34 @@ function FavMeals() {
     "Dumplings",
   ];
 
-  const getPizzaName = (restaurantName) => {
-    console.log("best pizza restaurant is:", restaurantName);
+  const [favMealsArray, setFavMealsArray] = useState(favMeals)
+
+  // const getPizzaName = (restaurantName) => {
+  //   console.log("best pizza restaurant is:", restaurantName);
+  // };
+
+  const [inputText, setInputText] = useState("");
+
+  const handleMealChange = (event) => {
+    // console.log("typing");
+    // console.log(event.target.value);
+    setInputText(event.target.value);
+    // console.log(inputText);
   };
+
+  const handleAddMealClick = () => {
+    // favMealsArray.push(inputText)
+    setFavMealsArray([...favMealsArray, inputText])
+    // console.log(favMeals);
+  }
 
   return (
     <div>
       <h3>Favorite Meals:</h3>
-      {favMeals.map((meal, index) => {
-        return <FavMeal meal={meal} key={index} getPizzaName={getPizzaName}  />;
+      <input type="text" onChange={handleMealChange} />
+      <button onClick={handleAddMealClick}>Add new meal</button>
+      {favMealsArray.map((meal, index) => {
+        return <FavMeal meal={meal} key={index} />;
       })}
     </div>
   );

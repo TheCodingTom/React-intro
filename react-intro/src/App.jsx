@@ -2,6 +2,10 @@ import './App.css'
 
 import FavMeals from "./components/FavMeals"
 import FirstComponent from "./components/FirstComponent"
+import Contact from './pages/Contact'
+import Counter from './pages/Counter'
+import Foo from './pages/Foo'
+import Home from './pages/Home'
 
 function App() {
   //JS - functions, variables, etc
@@ -12,9 +16,13 @@ function App() {
   //JSX
   return (
     <div>
-      <h1 className="red">Hello React World {groupName}</h1>
+      {/* <h1 className="red">Hello React World {groupName}</h1> */}
       {/* <FirstComponent /> */}
-      <FavMeals/>
+      {/* <FavMeals/> */}
+      {/* <Home/> */}
+      {/* <Contact/> */}
+      {/* <Counter/> */}
+      <Foo/>
     </div>
   )
 }
