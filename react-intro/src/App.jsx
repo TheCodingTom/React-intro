@@ -1,5 +1,6 @@
 // import './App.css'
 
+import FavMeals from "./components/FavMeals"
 import FirstComponent from "./components/FirstComponent"
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
   return (
     <div>
       <h1>Hello React World {groupName}</h1>
-      <FirstComponent />
+      {/* <FirstComponent /> */}
+      <FavMeals/>
     </div>
   )
 }
